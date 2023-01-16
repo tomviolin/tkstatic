@@ -1,4 +1,9 @@
 old
 old/
 old/*
-
+venv
+venv/
+venv/*
+*~
+~*
+.*~
