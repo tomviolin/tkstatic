@@ -235,11 +235,11 @@ def process_thread():
         elif switch==SW_REC:
             # recorded audio already in recbuffer,
             # may need to adjust in place
-            fact = 1.0
-            if kvolume < noisefloor*1.5:
-                fact = 0 #((kvolume/1.5)**1.5)*1.5
+            #fact = 1.0
+            #if kvolume < noisefloor*1.5:
+            #    fact = 0 #((kvolume/1.5)**1.5)*1.5
             with bufferslock:
-                recbuffer[MBP:MBP+args.blocksize] *= fact
+                #recbuffer[MBP:MBP+args.blocksize] *= fact
                 if NextBP == 0:
                     # we just filled up the current track
                     if len(buffers)==args.numbuff:

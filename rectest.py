@@ -3,16 +3,17 @@ import os
 
 # Audio inputs must be available.
 s = Server(audio="pa",duplex=1,nchnls=1,ichnls=1).boot()
-
+s.setInputDevice(2)
+s.setOutputDevice(3)
 # Path of the recorded sound file.
-path = os.path.join(os.path.expanduser("~"), "Desktop", "synth.wav")
+path = "synth.wav" #os.path.join(os.path.expanduser("~"), "Desktop", "synth.wav")
 
 # Creates a two seconds stereo empty table. The "feedback" argument
 # is the amount of old data to mix with a new recording (overdub).
 t = NewTable(length=2, chnls=2, feedback=0.5)
 
 # Retrieves the stereo input
-inp = Input([0])
+inp = Input(0)
 
 # Table recorder. Call rec.play() to start a recording, it stops
 # when the table is full. Call it multiple times to overdub.
